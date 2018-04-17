@@ -1,0 +1,29 @@
+{
+  "name": "stock-image-api",
+  "version": "1.0.0",
+  "description": "Provide simple API to get free stock photos based on keyword",
+  "main": "index.js",
+  "scripts": {
+    "babel-node": "babel-node --presets=latest",
+    "start": "nodemon --exec npm run babel-node -- ./server.js",
+    "build": "babel src -d dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "es6-promise": "^4.2.4",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "isomorphic-fetch": "^2.2.1",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-latest": "^6.24.1",
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.3"
+  }
+}
