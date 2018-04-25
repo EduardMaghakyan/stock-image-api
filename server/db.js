@@ -9,11 +9,11 @@ const addItem = (item) => {
   dbData.push(dbItem);
 };
 
-const getChunk = (chunk) =>
+const getChunk = (chunkSize) =>
   dbData.
     slice().
     reverse().
-    slice(0, chunk);
+    slice(0, chunkSize);
 
 export default {
   addItem,

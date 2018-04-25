@@ -12,7 +12,8 @@ query GetImages($keyword: String!, $offset: Int!) {
     context
   }
 }`;
-const PORT = process.env.PORT || 3000;
+
+const PORT = 3000;
 const app = express();
 
 app.get("/api/images/:keyword", (req, res) => {
