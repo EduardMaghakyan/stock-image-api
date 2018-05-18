@@ -1,6 +1,6 @@
 import express from "express";
 import { graphql } from "graphql";
-import schema from "./schema";
+import schema from "./schema/schema";
 import db from "./db";
 
 const query = `
@@ -13,7 +13,7 @@ query GetImages($keyword: String!, $offset: Int!) {
   }
 }`;
 
-const PORT = 3000;
+const PORT = 8080;
 const app = express();
 
 app.get("/api/images/:keyword", (req, res) => {
