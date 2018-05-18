@@ -5,7 +5,7 @@ API_KEY=<API_KEY>
 CSE_ID=<CSI_ID>
 ```
 
-## To start server
+## To start server navigate to `server` folder and run
 
 ```
 npm start
