@@ -16,18 +16,22 @@ query GetImages($keyword: String!, $offset: Int!) {
 const PORT = 8080;
 const app = express();
 
+const createUrl = req => {
+  return req.protocol + "://" + req.get("host") + req.originalUrl;
+};
+
 app.get("/api/images/:keyword", (req, res) => {
   const params = {
-    "keyword": encodeURI(req.params.keyword),
-    "offset": req.query.offset ? parseInt(req.query.offset, 10) : 1
+    keyword: encodeURI(req.params.keyword),
+    offset: req.query.offset ? parseInt(req.query.offset, 10) : 1
   };
 
-  graphql(schema, query, null, null, params).
-    then(function(result) {
-      db.addItem(req.protocol + "://" + req.get("host") + req.originalUrl);
+  graphql(schema, query, null, null, params)
+    .then(function(result) {
+      db.addItem(createUrl(req));
       res.send(result.data.images);
-    }).
-    catch((err) => res.send(err));
+    })
+    .catch(err => res.send(err));
 });
 
 app.get("/api/latest/imagesearch/", (req, res) => {
