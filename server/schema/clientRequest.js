@@ -18,9 +18,9 @@ const getRequestUrl = (keyword, offset = 1) => {
 };
 
 const getImages = (keyword, offset) =>
-  fetch(getRequestUrl(keyword, offset)).
-    then((response) => response.json()).
-    then((data) => data.items).
-    catch((err) => console.log(err));
+  fetch(getRequestUrl(keyword, offset))
+    .then(response => response.json())
+    .then(data => data.items)
+    .catch(err => console.log(err));
 
 export { getImages };

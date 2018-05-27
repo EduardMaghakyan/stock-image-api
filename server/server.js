@@ -6,6 +6,7 @@ import db from "./db";
 const query = `
 query GetImages($keyword: String!, $offset: Int!) {
   images(keyword: $keyword, offset: $offset) {
+    id,
     url,
     snippet, 
     thumbnail,
@@ -19,6 +20,22 @@ const app = express();
 const createUrl = req => {
   return req.protocol + "://" + req.get("host") + req.originalUrl;
 };
+
+// Add headers
+app.use(function(req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET"
+  );
+
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+  next();
+});
 
 app.get("/api/images/:keyword", (req, res) => {
   const params = {
