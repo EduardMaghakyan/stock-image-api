@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchForm /> matches saved snapshot 1`] = `
+<div>
+  <form
+    className="form-inline justify-content-center align-items-center"
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group mx-sm-3 mb-2"
+    >
+      <label
+        className="sr-only"
+        htmlFor="query"
+      >
+        Keyword
+      </label>
+      <input
+        className="form-control"
+        id="query"
+        name="query"
+        onChange={[Function]}
+        placeholder="Search"
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      className="btn btn-primary mb-2"
+      id="search-submit"
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;
